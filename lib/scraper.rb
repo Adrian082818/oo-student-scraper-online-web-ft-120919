@@ -49,7 +49,7 @@ class Scraper
 
   return_hash
   end
-
+end 
 end
   #   social_url = doc.css(".vitals-container .social-icon-container a")
   #   social_url.each do |e|
