@@ -32,18 +32,37 @@ class Scraper
    html = open(profile_url)
    doc = Nokogiri::HTML(html)
    student_hash = {}
-    social_url = doc.css(".vitals-container .social-icon-container a")
-    social_url.each do |e|
-      if e.attr.("href").include?("twitter")
-        student_hash[:twitter] = e.attr("href") 
-      elsif e.attr("href").include?("linkedin")
-      student_hash[:linkedin] = e.attr("href")
-      elsif e.attr("href").include?("github")
-      student_hash[:github] = e.attr("href")
-      elsif e.attr("href").end_with?("com/")
-      student_hash[:blog] = e.attr("href")
-    end 
+   social = doc.css(".vitals-container .social-icon-container a")
+      social.each do |element| #iterate through each of the social elements and assign the keys if the item exists
+        if element.attr('href').include?("twitter")
+          return_hash[:twitter] = element.attr('href')
+        elsif element.attr('href').include?("linkedin")
+          return_hash[:linkedin] = element.attr('href')
+        elsif element.attr('href').include?("github")
+          return_hash[:github] = element.attr('href')
+        elsif element.attr('href').end_with?("com/")
+          return_hash[:blog] = element.attr('href')
+        end
+      end
+      return_hash[:profile_quote] = doc.css(".vitals-container .vitals-text-container .profile-quote").text
+      return_hash[:bio] = doc.css(".bio-block.details-block .bio-content.content-holder .description-holder p").text
+
+  return_hash
   end
-  end 
+
+end
+  #   social_url = doc.css(".vitals-container .social-icon-container a")
+  #   social_url.each do |e|
+  #     if e.attr.("href").include?("twitter")
+  #       student_hash[:twitter] = e.attr("href") 
+  #     elsif e.attr("href").include?("linkedin")
+  #     student_hash[:linkedin] = e.attr("href")
+  #     elsif e.attr("href").include?("github")
+  #     student_hash[:github] = e.attr("href")
+  #     elsif e.attr("href").end_with?("com/")
+  #     student_hash[:blog] = e.attr("href")
+  #   end 
+  # end
+  # end 
 end
 
