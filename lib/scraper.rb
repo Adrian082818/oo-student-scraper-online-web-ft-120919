@@ -38,6 +38,8 @@ class Scraper
         student_hash[:twitter] = e.attr("href") 
       elsif e.attr("href").include?("linkedin")
       student_hash[:linkedin] = e.attr("href")
-      elsif e.attr("href").include?
+      elsif e.attr("href").include?("github")
+      student_hash[:github] = e.attr("href")
+      
 end
 
