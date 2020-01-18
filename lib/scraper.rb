@@ -35,6 +35,6 @@ class Scraper
     social_url = doc.css(".vitals-container .social-icon-container a")
     social_url.each do |e|
       if e.attr.("href").include?("twitter")
-        return 
+        student_hash[:twitter] = e.attr("href") 
 end
 
