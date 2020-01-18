@@ -6,7 +6,7 @@ class Student
 
   def initialize(student_hash)
     student_hash.each do |key, value|
-      self.send ("#{key}=", value) if self.
+      self.send ("#{key}=", value) if self.respond_to?("#{key}=")
       @@all << self 
   end
 end 
