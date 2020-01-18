@@ -50,18 +50,6 @@ class Scraper
   return_hash
   end
 end 
-  #   social_url = doc.css(".vitals-container .social-icon-container a")
-  #   social_url.each do |e|
-  #     if e.attr.("href").include?("twitter")
-  #       student_hash[:twitter] = e.attr("href") 
-  #     elsif e.attr("href").include?("linkedin")
-  #     student_hash[:linkedin] = e.attr("href")
-  #     elsif e.attr("href").include?("github")
-  #     student_hash[:github] = e.attr("href")
-  #     elsif e.attr("href").end_with?("com/")
-  #     student_hash[:blog] = e.attr("href")
-  #   end 
-  # end
-  # end 
+ 
 
 
