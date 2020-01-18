@@ -43,6 +43,7 @@ class Scraper
       elsif e.attr("href").end_with?("com/")
       student_hash[:blog] = e.attr("href")
     end 
+  end
   end 
 end
 
