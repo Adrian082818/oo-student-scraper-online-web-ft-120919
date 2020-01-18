@@ -4,7 +4,7 @@ require 'nokogiri'
 
 class Scraper
 
-  # def self.scrape_index_page(index_url)
+  def self.scrape_index_page(index_url)
   #       students_hash = []
   #   html = Nokogiri::HTML(open(index_url))
   #   html.css(".student-card").collect do |student|
@@ -25,6 +25,7 @@ class Scraper
         :location => element.css(".student-location").text,
         :profile_url => element.attr('href')
       }
+    end 
   end
 
   def self.scrape_profile_page(profile_url)
