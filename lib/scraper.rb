@@ -40,6 +40,7 @@ class Scraper
       student_hash[:linkedin] = e.attr("href")
       elsif e.attr("href").include?("github")
       student_hash[:github] = e.attr("href")
-      elsif e.attr("href").end_with?(".com/")
+      elsif e.attr("href").end_with?("com/")
+      
 end
 
