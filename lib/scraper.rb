@@ -34,6 +34,6 @@ class Scraper
    student_hash = {}
     social_url = doc.css(".vitals-container .social-icon-container a")
     social_url.each do |e|
-      
+      if e.attr
 end
 
